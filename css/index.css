@@ -852,6 +852,7 @@ li {
 #songs-one #songs-container .song {
   height: auto;
   width: 275px;
+  height: 500px;
   position: relative;
   margin: 40px auto;
   margin-top: 40px;
