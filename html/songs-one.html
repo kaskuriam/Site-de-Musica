@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NA1ZADA - Músicas</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <main id="songs-one">
+      <div id="preloader">
+        <div class="p">
+          <img src="../images/headphone.png" alt="headphone" />
+        </div>
+        <div class="p">Use Fones Para Uma Melhor Experiencia.</div>
+      </div>
+
+      <div id="songs-one-content">
+        <div class="navigation">
+          <div class="logo hover">
+            <a href="../index.html" class="text">NA1ZADA</a>
+          </div>
+
+          <div class="menu-bar hover">
+            <div class="menu-bar-name text">Menu</div>
+            <div class="menu-bar-lines text">
+              <div class="menu-bar-line"></div>
+              <div class="menu-bar-line"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="heading">
+          <div class="text">Músicas</div>
+        </div>
+
+        <div class="center">
+          <div id="songs-container">
+            <div class="song fade-up">
+              .
+              <div class="song-img">
+                <img src="../music logo/na1logo1.jpg" alt="song" />
+              </div>
+              <div class="song-details">
+                <div class="song-details-content">
+                  <div class="song-name">Californiana</div>
+                  <div class="artist-name">Na1</div>
+                </div>
+                <div class="music-player">
+                  <div class="play-song mouse" id="play">
+                    <img
+                      src="../images/play.png"
+                      alt="play"
+                      data-song="californiana"
+                    />
+                    <audio data-audio="californiana" id="music">
+                      <source
+                        src="../na1 music/Na1 - Californiana.m4a"
+                        type="audio/ogg"
+                      />
+                      <source
+                        src="../na1 music/Na1 - Californiana.m4a"
+                        type="audio/m4a"
+                      />
+                    </audio>
+                  </div>
+
+                  <div class="footer">
+                    <div class="progress-bar">
+                      <div class="progress"></div>
+                      <input type="range" id="seekbar" value="0" />
+                    </div>
+                    <div class="time">
+                      <span id="currentTime">0:00</span>
+                      <span id="duration">0:00</span>
+                    </div>
+                    <img
+                      src="../music logo/left-arrow.png"
+                      id="restart-image"
+                    />
+                  </div>
+
+                  <div class="download-song mouse">
+                    <a
+                      href="../na1 music/Na1 - Californiana.m4a"
+                      download="NA1 - Californiana"
+                      ><img src="../images/download.png" alt="download"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="song fade-up">
+              <div class="song-img">
+                <img src="../music logo/na1logo2.jpg" alt="song" />
+              </div>
+              <div class="song-details">
+                <div class="song-details-content">
+                  <div class="song-name">Cropped da prada</div>
+                  <div class="artist-name">Na1</div>
+                </div>
+                <div class="music-player">
+                  <div class="play-song mouse" id="play1">
+                    <img
+                      src="../images/play.png"
+                      alt="play"
+                      data-song="Cropped da prada"
+                    />
+                    <audio data-audio="Cropped da prada" id="music1">
+                      <source
+                        src="../na1 music/Na1 - Cropped da prada.mp3"
+                        type="audio/ogg"
+                      />
+                      <source
+                        src="../na1 music/Na1 - Cropped da prada.mp3"
+                        type="audio/mp3"
+                      />
+                    </audio>
+                  </div>
+
+                  <div class="footer">
+                    <div class="progress-bar1">
+                      <div class="progress1"></div>
+                      <input type="range" id="seekbar1" value="0" />
+                    </div>
+                    <div class="time1">
+                      <span id="currentTime1">0:00</span>
+                      <span id="duration1">0:00</span>
+                    </div>
+                    <img
+                      src="../music logo/left-arrow.png"
+                      id="restart-image1"
+                    />
+                  </div>
+                  <div class="download-song">
+                    <a
+                      href="../na1 music/Na1 - Cropped da prada.mp3"
+                      download="Na1 - Cropped da prada"
+                      ><img src="../images/download.png" alt="download"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="song fade-up">
+              <div class="song-img">
+                <img src="../music logo/na1logo3.jpg" alt="song" />
+              </div>
+
+              <div class="song-details">
+                <div class="song-details-content">
+                  <div class="song-name">Enfermeira</div>
+                  <div class="artist-name">Na1</div>
+                </div>
+                <div class="music-player">
+                  <div class="play-song mouse" id="play2">
+                    <img
+                      src="../images/play.png"
+                      alt="play"
+                      data-song="enfermeira"
+                    />
+                    <audio data-audio="enfermeira" id="music2">
+                      <source
+                        src="../na1 music/Na1 - Enfermeira.m4a"
+                        type="audio/ogg"
+                      />
+                      <source
+                        src="../na1 music/Na1 - Enfermeira.m4a"
+                        type="audio/mp3"
+                      />
+                    </audio>
+                  </div>
+
+                  <div class="footer">
+                    <div class="progress-bar2">
+                      <div class="progress2"></div>
+                      <input type="range" id="seekbar2" value="0" />
+                    </div>
+                    <div class="time">
+                      <span id="currentTime2">0:00</span>
+                      <span id="duration2">0:00</span>
+                    </div>
+                    <img
+                      src="../music logo/left-arrow.png"
+                      id="restart-image2"
+                    />
+                  </div>
+                  <div class="download-song">
+                    <a
+                      href="../na1 music/Na1 - Enfermeira.m4a"
+                      download="Na1 - Enfermeira"
+                      ><img src="../images/download.png" alt="download"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="song fade-up">
+              <div class="song-img">
+                <img src="../music logo/na1logo4.jpg" alt="song" />
+              </div>
+
+              <div class="song-details">
+                <div class="song-details-content">
+                  <div class="song-name">Hoje não tem</div>
+                  <div class="artist-name">Na1</div>
+                </div>
+                <div class="music-player">
+                  <div class="play-song mouse" id="play3">
+                    <img
+                      src="../images/play.png"
+                      alt="play"
+                      data-song="Hoje não tem"
+                    />
+                    <audio data-audio="Hoje não tem" id="music3">
+                      <source
+                        src="../na1 music/Na1 - Hoje não tem.mp3"
+                        type="audio/ogg"
+                      />
+                      <source
+                        src="../na1 music/Na1 - Hoje não tem.mp3"
+                        type="audio/mp3"
+                      />
+                    </audio>
+                  </div>
+
+                  <div class="footer">
+                    <div class="progress-bar3">
+                      <div class="progress3"></div>
+                      <input type="range" id="seekbar3" value="0" />
+                    </div>
+                    <div class="time">
+                      <span id="currentTime3">0:00</span>
+                      <span id="duration3">0:00</span>
+                    </div>
+                    <img
+                      src="../music logo/left-arrow.png"
+                      id="restart-image3"
+                    />
+                  </div>
+
+                  <div class="download-song">
+                    <a
+                      href="../na1 music/Na1 - Hoje não tem.mp3"
+                      download="Na1 - Hoje não tem"
+                      ><img src="../images/download.png" alt="download"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="song fade-up">
+              <div class="song-img">
+                <img src="../music logo/na1logo10.jpeg" alt="song" />
+              </div>
+              <div class="song-details">
+                <div class="song-details-content">
+                  <div class="song-name">Loja da Nike.mp3</div>
+                  <div class="artist-name">Na1 e XL</div>
+                </div>
+                <div class="music-player">
+                  <div class="play-song mouse" id="play4">
+                    <img
+                      src="../images/play.png"
+                      alt="play"
+                      data-song="Loja da Nike"
+                    />
+
+                    <audio data-audio="Loja da Nike" id="music4">
+                      <source
+                        src="../na1 music/Na1 - Loja da Nike.mp3"
+                        type="audio/ogg"
+                      />
+                      <source
+                        src="../na1 music/Na1 - Loja da Nike.mp3"
+                        type="audio/mp3"
+                      />
+                    </audio>
+                  </div>
+
+                  <div class="footer">
+                    <div class="progress-bar4">
+                      <div class="progress4"></div>
+                      <input type="range" id="seekbar4" value="0" />
+                    </div>
+                    <div class="time">
+                      <span id="currentTime4">0:00</span>
+                      <span id="duration4">0:00</span>
+                    </div>
+                    <img
+                      src="../music logo/left-arrow.png"
+                      id="restart-image4"
+                    />
+                  </div>
+
+                  <div class="download-song">
+                    <a
+                      href="../na1 music/Na1 - Loja da Nike.mp3"
+                      download="Na1 - Loja da Nike.mp3"
+                      ><img src="../images/download.png" alt="download"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="song fade-up">
+              <div class="song-img">
+                <img src="../music logo/na1logo5.jpg" alt="song" />
+              </div>
+
+              <div class="song-details">
+                <div class="song-details-content">
+                  <div class="song-name">Honey</div>
+                  <div class="artist-name">Na1 e XL</div>
+                </div>
+                <div class="music-player">
+                  <div class="play-song mouse" id="play5">
+                    <img
+                      src="../images/play.png"
+                      alt="play"
+                      data-song="Honey"
+                    />
+
+                    <audio data-audio="Honey" id="music5">
+                      <source
+                        src="../na1 music/Na1 - Honey.mp3"
+                        type="audio/ogg"
+                      />
+                      <source
+                        src="../na1 music/Na1 - Honey.mp3"
+                        type="audio/mp3"
+                      />
+                    </audio>
+                  </div>
+
+                  <div class="footer">
+                    <div class="progress-bar5">
+                      <div class="progress5"></div>
+                      <input type="range" id="seekbar5" value="0" />
+                    </div>
+                    <div class="time">
+                      <span id="currentTime5">0:00</span>
+                      <span id="duration5">0:00</span>
+                    </div>
+                    <img
+                      src="../music logo/left-arrow.png"
+                      id="restart-image5"
+                    />
+                  </div>
+
+                  <div class="download-song">
+                    <a
+                      href="../na1 music/Na1 - Honey.mp3"
+                      download="Na1 - Honey"
+                      ><img src="../images/download.png" alt="download"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="song fade-up">
+              <div class="song-img">
+                <img src="../music logo/na1logo6.jpg" alt="song" />
+              </div>
+
+              <div class="song-details">
+                <div class="song-details-content">
+                  <div class="song-name">Questão de tempo</div>
+                  <div class="artist-name">Na1</div>
+                </div>
+                <div class="music-player">
+                  <div class="play-song mouse" id="play6">
+                    <img
+                      src="../images/play.png"
+                      alt="play"
+                      data-song="Questão de tempo"
+                    />
+                    <audio data-audio="Questão de tempo" id="music6">
+                      <source
+                        src="../na1 music/Na1 - Questão de tempo.mp3"
+                        type="audio/ogg"
+                      />
+                      <source
+                        src="../na1 music/Na1 - Questão de tempo.mp3"
+                        type="audio/mp3"
+                      />
+                    </audio>
+                  </div>
+
+                  <div class="footer">
+                    <div class="progress-bar6">
+                      <div class="progress6"></div>
+                      <input type="range" id="seekbar6" value="0" />
+                    </div>
+                    <div class="time">
+                      <span id="currentTime6">0:00</span>
+                      <span id="duration6">0:00</span>
+                    </div>
+                    <img
+                      src="../music logo/left-arrow.png"
+                      id="restart-image6"
+                    />
+                  </div>
+
+                  <div class="download-song">
+                    <a
+                      href="../na1 music/Na1 - Questão de tempo.mp3"
+                      download="Na1 - Questão de tempo"
+                      ><img src="../images/download.png" alt="download"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="song fade-up">
+              <div class="song-img">
+                <img src="../music logo/na1logo7.jpg" alt="song" />
+              </div>
+
+              <div class="song-details">
+                <div class="song-details-content">
+                  <div class="song-name">Selvagem</div>
+                  <div class="artist-name">Na1,70k e XL</div>
+                </div>
+                <div class="music-player">
+                  <div class="play-song mouse" id="play7">
+                    <img
+                      src="../images/play.png"
+                      alt="play"
+                      data-song="Selvagem"
+                    />
+
+                    <audio data-audio="Selvagem" id="music7">
+                      <source
+                        src="../na1 music/Na1 - Selvagem.mp3"
+                        type="audio/ogg"
+                      />
+                      <source
+                        src="../na1 music/Na1 - Selvagem.mp3"
+                        type="audio/mp3"
+                      />
+                    </audio>
+                  </div>
+
+                  <div class="footer">
+                    <div class="progress-bar7">
+                      <div class="progress7"></div>
+                      <input type="range" id="seekbar7" value="0" />
+                    </div>
+                    <div class="time">
+                      <span id="currentTime7">0:00</span>
+                      <span id="duration7">0:00</span>
+                    </div>
+                    <img
+                      src="../music logo/left-arrow.png"
+                      id="restart-image7"
+                    />
+                  </div>
+
+                  <div class="download-song">
+                    <a
+                      href="../na1 music/Na1 - Selvagem.mp3"
+                      download="Na1 - Selvagem"
+                      ><img src="../images/download.png" alt="download"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="song fade-up">
+              <div class="song-img">
+                <img src="../music logo/na1logo8.jpg" alt="song" />
+              </div>
+
+              <div class="song-details">
+                <div class="song-details-content">
+                  <div class="song-name">SPA</div>
+                  <div class="artist-name">Na1</div>
+                </div>
+                <div class="music-player">
+                  <div class="play-song mouse" id="play8">
+                    <img src="../images/play.png" alt="play" data-song="SPA" />
+
+                    <audio data-audio="SPA" id="music8">
+                      <source
+                        src="../na1 music/Na1 - SPA.m4a"
+                        type="audio/ogg"
+                      />
+                      <source
+                        src="../na1 music/Na1 - SPA.m4a"
+                        type="audio/mp3"
+                      />
+                    </audio>
+                  </div>
+
+                  <div class="footer">
+                    <div class="progress-bar8">
+                      <div class="progress8"></div>
+                      <input type="range" id="seekbar8" value="0" />
+                    </div>
+                    <div class="time">
+                      <span id="currentTime8">0:00</span>
+                      <span id="duration8">0:00</span>
+                    </div>
+                    <img
+                      src="../music logo/left-arrow.png"
+                      id="restart-image8"
+                    />
+                  </div>
+
+                  <div class="download-song">
+                    <a href="../na1 music/Na1 - SPA.m4a" download="Na1 - SPA"
+                      ><img src="../images/download.png" alt="download"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="song fade-up">
+              <div class="song-img">
+                <img src="../music logo/na1logo11.jpg" alt="song" />
+              </div>
+              <div class="song-details">
+                <div class="song-details-content">
+                  <div class="song-name">SPA - Studio Version</div>
+                  <div class="artist-name">Na1</div>
+                </div>
+                <div class="music-player">
+                  <div class="play-song mouse" id="play9">
+                    <img
+                      src="../images/play.png"
+                      alt="play"
+                      data-song="SPASTUDIO"
+                    />
+
+                    <audio data-audio="SPASTUDIO" id="music9">
+                      <source
+                        src="../na1 music/Na1 - SPA - Studio version.mp3"
+                        type="audio/ogg"
+                      />
+                      <source
+                        src="../na1 music/Na1 - SPA - Studio version.mp3"
+                        type="audio/mp3"
+                      />
+                    </audio>
+                  </div>
+
+                  <div class="footer">
+                    <div class="progress-bar9">
+                      <div class="progress9"></div>
+                      <input type="range" id="seekbar9" value="0" />
+                    </div>
+                    <div class="time">
+                      <span id="currentTime9">0:00</span>
+                      <span id="duration9">0:00</span>
+                    </div>
+                    <img
+                      src="../music logo/left-arrow.png"
+                      id="restart-image9"
+                    />
+                  </div>
+
+                  <div class="download-song">
+                    <a
+                      href="../na1 music/Na1 - SPA - Studio version.mp3"
+                      download="Na1 - SPA - Studio Version"
+                      ><img src="../images/download.png" alt="download"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="song fade-up">
+              <div class="song-img">
+                <img src="../music logo/na1logo9.jpg" alt="song" />
+              </div>
+              <div class="song-details">
+                <div class="song-details-content">
+                  <div class="song-name">VIP</div>
+                  <div class="artist-name">Na1</div>
+                </div>
+                <div class="music-player">
+                  <div class="play-song mouse" id="play10">
+                    <img src="../images/play.png" alt="play" data-song="VIP" />
+
+                    <audio data-audio="VIP" id="music10">
+                      <source
+                        src="../na1 music/Na1 - VIP.mp3"
+                        type="audio/ogg"
+                      />
+                      <source
+                        src="../na1 music/Na1 - VIP.mp3"
+                        type="audio/mp3"
+                      />
+                    </audio>
+                  </div>
+
+                  <div class="footer">
+                    <div class="progress-bar10">
+                      <div class="progress10"></div>
+                      <input type="range" id="seekbar10" value="0" />
+                    </div>
+                    <div class="time">
+                      <span id="currentTime10">0:00</span>
+                      <span id="duration10">0:00</span>
+                    </div>
+                    <img
+                      src="../music logo/left-arrow.png"
+                      id="restart-image10"
+                    />
+                  </div>
+
+                  <div class="download-song">
+                    <a href="../na1 music/Na1 - VIP.mp3" download="Na1 - VIP"
+                      ><img src="../images/download.png" alt="download"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="headphone img text">
+          <img
+            src="../images/headphone.png"
+            title="headphone zone"
+            class="text"
+            alt="headphone"
+          />
+        </div>
+
+        <div class="music-indicator">
+          <span style="--i: 1" class="music-indicator-span"></span>
+          <span style="--i: 2" class="music-indicator-span"></span>
+          <span style="--i: 3" class="music-indicator-span"></span>
+          <span style="--i: 4" class="music-indicator-span"></span>
+        </div>
+
+        <div class="progress-bar-container fade-in">
+          <div class="progressbar"></div>
+        </div>
+      </div>
+
+      <div class="navigation-content">
+        <div class="navigation-logo hover opacity">
+          <a href="../index.html" class="text">NA1ZADA</a>
+        </div>
+        <ul class="navigation-ul">
+          <li><a href="../index.html" data-text="Home">Home</a></li>
+          <li><a href="./about-one.html" data-text="Sobre">Sobre</a></li>
+          <li><a href="songs-one.html" data-text="Músicas">Músicas</a></li>
+        </ul>
+        <div class="navigation-close hover about-close opacity">
+          <div class="navigation-close-line"></div>
+          <div class="navigation-close-line"></div>
+        </div>
+
+        <div class="project-preview"></div>
+
+        <div class="headphone-navigation opacity">
+          <img
+            src="../images/headphone.png"
+            title="headphone zone"
+            class="text"
+            alt="headphone"
+          />
+        </div>
+
+        <div class="social-media-links-navigation">
+          <ul>
+            <li>
+              <a href="#" data-text="Youtube" class="text hover opacity"
+                >Youtube</a
+              >
+            </li>
+            <li>
+              <a href="#" data-text="Facebook" class="text hover opacity"
+                >Facebook</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://instagram.com/na1zada?igshid=NjIwNzIyMDk2Mg=="
+                data-text="Instagram"
+                class="text hover opacity"
+                >Instagram</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/pace.js"></script>
+    <script src="../js/index.js"></script>
+  </body>
+</html>
