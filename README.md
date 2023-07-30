@@ -1,6 +1,6 @@
 <h1 align="center">NA1ZADA Web Site</h1>
 
-<p align="center">Um projeto que eu fiz para um amigo. Um site que contém as múscias e um pouco da história dele.</p>
+<p align="center">Um projeto que eu fiz para um amigo. Um site que contém as músicas e um pouco da história dele.</p>
 <p align="center">
   <img src="https://img.shields.io/badge/license-MIT-blue">
   <img src="https://img.shields.io/badge/status-FINISH-green">
