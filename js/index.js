@@ -189,24 +189,6 @@ window.onload = function () {
   const progress = document.querySelector(".progress");
   player.ontimeupdate = () => updateTime();
   const updateTime = () => {
-    const currentMinutes = Math.floor(player.currentTime / 60);
-    const currentSeconds = Math.floor(player.currentTime % 60);
-    currentTime.textContent = currentMinutes + ":" + formatZero(currentSeconds);
-    const durationFormatted = isNaN(player.duration) ? 0 : player.duration;
-    const durationMinutes = Math.floor(durationFormatted / 60);
-    const durationSeconds = Math.floor(durationFormatted % 60);
-    duration.textContent = durationMinutes + ":" + formatZero(durationSeconds);
-    const progressWidth = durationFormatted
-      ? (player.currentTime / durationFormatted) * 100
-      : 0;
-    progress.style.width = progressWidth + "%";
-  };
-  const formatZero = (n) => (n < 10 ? "0" + n : n);
-  progressBar.onclick = (e) => {
-    const newTime = (e.offsetX / progressBar.offsetWidth) * player.duration;
-    player.currentTime = newTime;
-  };
-
   const seekbar = document.querySelector("#seekbar");
   seekbar.max = player.duration;
   seekbar.value = player.currentTime;
@@ -227,6 +209,24 @@ window.onload = function () {
       playPauseButton.src = "../images/pause.png";
     };
   };
+    const currentMinutes = Math.floor(player.currentTime / 60);
+    const currentSeconds = Math.floor(player.currentTime % 60);
+    currentTime.textContent = currentMinutes + ":" + formatZero(currentSeconds);
+    const durationFormatted = isNaN(player.duration) ? 0 : player.duration;
+    const durationMinutes = Math.floor(durationFormatted / 60);
+    const durationSeconds = Math.floor(durationFormatted % 60);
+    duration.textContent = durationMinutes + ":" + formatZero(durationSeconds);
+    const progressWidth = durationFormatted
+      ? (player.currentTime / durationFormatted) * 100
+      : 0;
+    progress.style.width = progressWidth + "%";
+  };
+  const formatZero = (n) => (n < 10 ? "0" + n : n);
+  progressBar.onclick = (e) => {
+    const newTime = (e.offsetX / progressBar.offsetWidth) * player.duration;
+    player.currentTime = newTime;
+  };
+
 
   const player1 = document.querySelector("#music1");
   const currentTime1 = document.querySelector("#currentTime1");
@@ -235,6 +235,26 @@ window.onload = function () {
   const progress1 = document.querySelector(".progress1");
   player1.ontimeupdate = () => updateTime1();
   const updateTime1 = () => {
+    const seekbar1 = document.querySelector("#seekbar1");
+    seekbar1.max = player1.duration;
+    seekbar1.value = player1.currentTime;
+    player.ontimeupdate = () => {
+      seekbar1.value = player1.currentTime;
+      updateTime1();
+    };
+    seekbar1.oninput = () => {
+      player1.currentTime = seekbar1.value;
+  
+      const restartImage = document.querySelector("#restart-image1");
+      const playPauseButton1 = document.querySelector("#play1");
+  
+      restartImage.onclick = () => {
+        player1.currentTime = 0;
+        seekbar1.value = 0;
+        player1.play();
+        playPauseButton1.src = "images/pause1.png";
+      };
+    };
     const currentMinutes = Math.floor(player1.currentTime / 60);
     const currentSeconds = Math.floor(player1.currentTime % 60);
     currentTime1.textContent =
@@ -255,26 +275,6 @@ window.onload = function () {
     player1.currentTime = newTime;
   };
 
-  const seekbar1 = document.querySelector("#seekbar1");
-  seekbar1.max = player1.duration;
-  seekbar1.value = player1.currentTime;
-  player.ontimeupdate = () => {
-    seekbar1.value = player1.currentTime;
-    updateTime1();
-  };
-  seekbar1.oninput = () => {
-    player1.currentTime = seekbar1.value;
-
-    const restartImage = document.querySelector("#restart-image1");
-    const playPauseButton1 = document.querySelector("#play1");
-
-    restartImage.onclick = () => {
-      player1.currentTime = 0;
-      seekbar1.value = 0;
-      player1.play();
-      playPauseButton1.src = "images/pause1.png";
-    };
-  };
 
   const player2 = document.querySelector("#music2");
   const currentTime2 = document.querySelector("#currentTime2");
@@ -283,6 +283,26 @@ window.onload = function () {
   const progress2 = document.querySelector(".progress2");
   player2.ontimeupdate = () => updateTime2();
   const updateTime2 = () => {
+    const seekbar2 = document.querySelector("#seekbar2");
+    seekbar2.max = player2.duration;
+    seekbar2.value = player2.currentTime;
+    player.ontimeupdate = () => {
+      seekbar2.value = player2.currentTime;
+      updateTime();
+    };
+    seekbar2.oninput = () => {
+      player2.currentTime = seekbar2.value;
+  
+      const restartImage = document.querySelector("#restart-image2");
+      const playPauseButton1 = document.querySelector("#play2");
+  
+      restartImage.onclick = () => {
+        player2.currentTime = 0;
+        seekbar2.value = 0;
+        player2.play();
+        playPauseButton1.src = "images/pause2.png";
+      };
+    };
     const currentMinutes = Math.floor(player2.currentTime / 60);
     const currentSeconds = Math.floor(player2.currentTime % 60);
     currentTime2.textContent =
@@ -303,26 +323,6 @@ window.onload = function () {
     player2.currentTime = newTime;
   };
 
-  const seekbar2 = document.querySelector("#seekbar2");
-  seekbar2.max = player2.duration;
-  seekbar2.value = player2.currentTime;
-  player.ontimeupdate = () => {
-    seekbar2.value = player2.currentTime;
-    updateTime();
-  };
-  seekbar2.oninput = () => {
-    player2.currentTime = seekbar2.value;
-
-    const restartImage = document.querySelector("#restart-image2");
-    const playPauseButton1 = document.querySelector("#play2");
-
-    restartImage.onclick = () => {
-      player2.currentTime = 0;
-      seekbar2.value = 0;
-      player2.play();
-      playPauseButton1.src = "images/pause2.png";
-    };
-  };
 
   const player3 = document.querySelector("#music3");
   const currentTime3 = document.querySelector("#currentTime3");
@@ -331,6 +331,26 @@ window.onload = function () {
   const progress3 = document.querySelector(".progress3");
   player3.ontimeupdate = () => updateTime3();
   const updateTime3 = () => {
+    const seekbar3 = document.querySelector("#seekbar3");
+    seekbar3.max = player3.duration;
+    seekbar3.value = player3.currentTime;
+    player.ontimeupdate = () => {
+      seekbar3.value = player3.currentTime;
+      updateTime();
+    };
+    seekbar3.oninput = () => {
+      player3.currentTime = seekbar3.value;
+  
+      const restartImage = document.querySelector("#restart-image3");
+      const playPauseButton3 = document.querySelector("#play3");
+  
+      restartImage.onclick = () => {
+        player3.currentTime = 0;
+        seekbar3.value = 0;
+        player3.play();
+        playPauseButton3.src = "images/pause3.png";
+      };
+    };
     const currentMinutes = Math.floor(player3.currentTime / 60);
     const currentSeconds = Math.floor(player3.currentTime % 60);
     currentTime3.textContent =
@@ -351,26 +371,6 @@ window.onload = function () {
     player3.currentTime = newTime;
   };
 
-  const seekbar3 = document.querySelector("#seekbar3");
-  seekbar3.max = player3.duration;
-  seekbar3.value = player3.currentTime;
-  player.ontimeupdate = () => {
-    seekbar3.value = player3.currentTime;
-    updateTime();
-  };
-  seekbar3.oninput = () => {
-    player3.currentTime = seekbar3.value;
-
-    const restartImage = document.querySelector("#restart-image3");
-    const playPauseButton3 = document.querySelector("#play3");
-
-    restartImage.onclick = () => {
-      player3.currentTime = 0;
-      seekbar3.value = 0;
-      player3.play();
-      playPauseButton3.src = "images/pause3.png";
-    };
-  };
 
   const player4 = document.querySelector("#music4");
   const currentTime4 = document.querySelector("#currentTime4");
@@ -379,6 +379,26 @@ window.onload = function () {
   const progress4 = document.querySelector(".progress4");
   player4.ontimeupdate = () => updateTime4();
   const updateTime4 = () => {
+    const seekbar4 = document.querySelector("#seekbar4");
+    seekbar4.max = player4.duration;
+    seekbar4.value = player4.currentTime;
+    player.ontimeupdate = () => {
+      seekbar4.value = player4.currentTime;
+      updateTime();
+    };
+    seekbar4.oninput = () => {
+      player4.currentTime = seekbar4.value;
+  
+      const restartImage = document.querySelector("#restart-image4");
+      const playPauseButton4 = document.querySelector("#play4");
+  
+      restartImage.onclick = () => {
+        player4.currentTime = 0;
+        seekbar4.value = 0;
+        player4.play();
+        playPauseButton4.src = "images/pause4.png";
+      };
+    };
     const currentMinutes = Math.floor(player4.currentTime / 60);
     const currentSeconds = Math.floor(player4.currentTime % 60);
     currentTime4.textContent =
@@ -399,26 +419,6 @@ window.onload = function () {
     player4.currentTime = newTime;
   };
 
-  const seekbar4 = document.querySelector("#seekbar4");
-  seekbar4.max = player4.duration;
-  seekbar4.value = player4.currentTime;
-  player.ontimeupdate = () => {
-    seekbar4.value = player4.currentTime;
-    updateTime();
-  };
-  seekbar4.oninput = () => {
-    player4.currentTime = seekbar4.value;
-
-    const restartImage = document.querySelector("#restart-image4");
-    const playPauseButton4 = document.querySelector("#play4");
-
-    restartImage.onclick = () => {
-      player4.currentTime = 0;
-      seekbar4.value = 0;
-      player4.play();
-      playPauseButton4.src = "images/pause4.png";
-    };
-  };
 
   const player5 = document.querySelector("#music5");
   const currentTime5 = document.querySelector("#currentTime5");
@@ -427,6 +427,26 @@ window.onload = function () {
   const progress5 = document.querySelector(".progress5");
   player5.ontimeupdate = () => updateTime5();
   const updateTime5 = () => {
+    const seekbar5 = document.querySelector("#seekbar5");
+    seekbar5.max = player5.duration;
+    seekbar5.value = player5.currentTime;
+    player.ontimeupdate = () => {
+      seekbar5.value = player5.currentTime;
+      updateTime();
+    };
+    seekbar5.oninput = () => {
+      player5.currentTime = seekbar5.value;
+  
+      const restartImage = document.querySelector("#restart-image5");
+      const playPauseButton5 = document.querySelector("#play5");
+  
+      restartImage.onclick = () => {
+        player5.currentTime = 0;
+        seekbar5.value = 0;
+        player5.play();
+        playPauseButton5.src = "images/pause5.png";
+      };
+    };
     const currentMinutes = Math.floor(player5.currentTime / 60);
     const currentSeconds = Math.floor(player5.currentTime % 60);
     currentTime5.textContent =
@@ -447,26 +467,6 @@ window.onload = function () {
     player5.currentTime = newTime;
   };
 
-  const seekbar5 = document.querySelector("#seekbar5");
-  seekbar5.max = player5.duration;
-  seekbar5.value = player5.currentTime;
-  player.ontimeupdate = () => {
-    seekbar5.value = player5.currentTime;
-    updateTime();
-  };
-  seekbar5.oninput = () => {
-    player5.currentTime = seekbar5.value;
-
-    const restartImage = document.querySelector("#restart-image5");
-    const playPauseButton5 = document.querySelector("#play5");
-
-    restartImage.onclick = () => {
-      player5.currentTime = 0;
-      seekbar5.value = 0;
-      player5.play();
-      playPauseButton5.src = "images/pause5.png";
-    };
-  };
 
   const player6 = document.querySelector("#music6");
   const currentTime6 = document.querySelector("#currentTime6");
@@ -475,6 +475,26 @@ window.onload = function () {
   const progress6 = document.querySelector(".progress6");
   player6.ontimeupdate = () => updateTime6();
   const updateTime6 = () => {
+    const seekbar6 = document.querySelector("#seekbar6");
+    seekbar6.max = player6.duration;
+    seekbar6.value = player6.currentTime;
+    player.ontimeupdate = () => {
+      seekbar6.value = player6.currentTime;
+      updateTime();
+    };
+    seekbar6.oninput = () => {
+      player6.currentTime = seekbar6.value;
+  
+      const restartImage = document.querySelector("#restart-image6");
+      const playPauseButton6 = document.querySelector("#play6");
+  
+      restartImage.onclick = () => {
+        player6.currentTime = 0;
+        seekbar6.value = 0;
+        player6.play();
+        playPauseButton6.src = "images/pause6.png";
+      };
+    };
     const currentMinutes = Math.floor(player6.currentTime / 60);
     const currentSeconds = Math.floor(player6.currentTime % 60);
     currentTime6.textContent =
@@ -495,26 +515,6 @@ window.onload = function () {
     player6.currentTime = newTime;
   };
 
-  const seekbar6 = document.querySelector("#seekbar6");
-  seekbar6.max = player6.duration;
-  seekbar6.value = player6.currentTime;
-  player.ontimeupdate = () => {
-    seekbar6.value = player6.currentTime;
-    updateTime();
-  };
-  seekbar6.oninput = () => {
-    player6.currentTime = seekbar6.value;
-
-    const restartImage = document.querySelector("#restart-image6");
-    const playPauseButton6 = document.querySelector("#play6");
-
-    restartImage.onclick = () => {
-      player6.currentTime = 0;
-      seekbar6.value = 0;
-      player6.play();
-      playPauseButton6.src = "images/pause6.png";
-    };
-  };
 
   const player7 = document.querySelector("#music7");
   const currentTime7 = document.querySelector("#currentTime7");
@@ -523,6 +523,26 @@ window.onload = function () {
   const progress7 = document.querySelector(".progress7");
   player7.ontimeupdate = () => updateTime7();
   const updateTime7 = () => {
+    const seekbar7 = document.querySelector("#seekbar7");
+    seekbar7.max = player7.duration;
+    seekbar7.value = player7.currentTime;
+    player.ontimeupdate = () => {
+      seekbar7.value = player7.currentTime;
+      updateTime();
+    };
+    seekbar7.oninput = () => {
+      player7.currentTime = seekbar7.value;
+  
+      const restartImage = document.querySelector("#restart-image7");
+      const playPauseButton7 = document.querySelector("#play7");
+  
+      restartImage.onclick = () => {
+        player7.currentTime = 0;
+        seekbar7.value = 0;
+        player7.play();
+        playPauseButton7.src = "images/pause7.png";
+      };
+    };
     const currentMinutes = Math.floor(player7.currentTime / 60);
     const currentSeconds = Math.floor(player7.currentTime % 60);
     currentTime7.textContent =
@@ -543,26 +563,6 @@ window.onload = function () {
     player7.currentTime = newTime;
   };
 
-  const seekbar7 = document.querySelector("#seekbar7");
-  seekbar7.max = player7.duration;
-  seekbar7.value = player7.currentTime;
-  player.ontimeupdate = () => {
-    seekbar7.value = player7.currentTime;
-    updateTime();
-  };
-  seekbar7.oninput = () => {
-    player7.currentTime = seekbar7.value;
-
-    const restartImage = document.querySelector("#restart-image7");
-    const playPauseButton7 = document.querySelector("#play7");
-
-    restartImage.onclick = () => {
-      player7.currentTime = 0;
-      seekbar7.value = 0;
-      player7.play();
-      playPauseButton7.src = "images/pause7.png";
-    };
-  };
 
   const player8 = document.querySelector("#music8");
   const currentTime8 = document.querySelector("#currentTime8");
@@ -571,6 +571,25 @@ window.onload = function () {
   const progress8 = document.querySelector(".progress8");
   player8.ontimeupdate = () => updateTime8();
   const updateTime8 = () => {
+    const seekbar8 = document.querySelector("#seekbar8");
+    seekbar8.max = player8.duration;
+    seekbar8.value = player8.currentTime;
+    player.ontimeupdate = () => {
+      seekbar8.value = player8.currentTime;
+      updateTime();
+    };
+    seekbar8.oninput = () => {
+      player8.currentTime = seekbar8.value;
+  
+      const restartImage = document.querySelector("#restart-image8");
+      const playPauseButton8 = document.querySelector("#play8");
+      restartImage.onclick = () => {
+        player8.currentTime = 0;
+        seekbar8.value = 0;
+        player8.play();
+        playPauseButton8.src = "images/pause8.png";
+      };
+    };
     const currentMinutes = Math.floor(player8.currentTime / 60);
     const currentSeconds = Math.floor(player8.currentTime % 60);
     currentTime8.textContent =
@@ -591,25 +610,6 @@ window.onload = function () {
     player8.currentTime = newTime;
   };
 
-  const seekbar8 = document.querySelector("#seekbar8");
-  seekbar8.max = player8.duration;
-  seekbar8.value = player8.currentTime;
-  player.ontimeupdate = () => {
-    seekbar8.value = player8.currentTime;
-    updateTime();
-  };
-  seekbar8.oninput = () => {
-    player8.currentTime = seekbar8.value;
-
-    const restartImage = document.querySelector("#restart-image8");
-    const playPauseButton8 = document.querySelector("#play8");
-    restartImage.onclick = () => {
-      player8.currentTime = 0;
-      seekbar8.value = 0;
-      player8.play();
-      playPauseButton8.src = "images/pause8.png";
-    };
-  };
 
   const player9 = document.querySelector("#music9");
   const currentTime9 = document.querySelector("#currentTime9");
@@ -618,6 +618,25 @@ window.onload = function () {
   const progress9 = document.querySelector(".progress9");
   player9.ontimeupdate = () => updateTime9();
   const updateTime9 = () => {
+    const seekbar9 = document.querySelector("#seekbar9");
+    seekbar9.max = player9.duration;
+    seekbar9.value = player9.currentTime;
+    player.ontimeupdate = () => {
+      seekbar9.value = player9.currentTime;
+      updateTime();
+    };
+    seekbar9.oninput = () => {
+      player9.currentTime = seekbar9.value;
+  
+      const restartImage = document.querySelector("#restart-image9");
+      const playPauseButton9 = document.querySelector("#play9");
+      restartImage.onclick = () => {
+        player9.currentTime = 0;
+        seekbar9.value = 0;
+        player9.play();
+        playPauseButton9.src = "images/pause9.png";
+      };
+    };
     const currentMinutes = Math.floor(player9.currentTime / 60);
     const currentSeconds = Math.floor(player9.currentTime % 60);
     currentTime9.textContent =
@@ -638,25 +657,6 @@ window.onload = function () {
     player9.currentTime = newTime;
   };
 
-  const seekbar9 = document.querySelector("#seekbar9");
-  seekbar9.max = player9.duration;
-  seekbar9.value = player9.currentTime;
-  player.ontimeupdate = () => {
-    seekbar9.value = player9.currentTime;
-    updateTime();
-  };
-  seekbar9.oninput = () => {
-    player9.currentTime = seekbar9.value;
-
-    const restartImage = document.querySelector("#restart-image9");
-    const playPauseButton9 = document.querySelector("#play9");
-    restartImage.onclick = () => {
-      player9.currentTime = 0;
-      seekbar9.value = 0;
-      player9.play();
-      playPauseButton9.src = "images/pause9.png";
-    };
-  };
 
   const player10 = document.querySelector("#music10");
   const currentTime10 = document.querySelector("#currentTime10");
@@ -665,6 +665,25 @@ window.onload = function () {
   const progress10 = document.querySelector(".progress10");
   player10.ontimeupdate = () => updateTime10();
   const updateTime10 = () => {
+    const seekbar10 = document.querySelector("#seekbar10");
+    seekbar10.max = player10.duration;
+    seekbar10.value = player10.currentTime;
+    player.ontimeupdate = () => {
+      seekbar10.value = player10.currentTime;
+      updateTime();
+    };
+    seekbar10.oninput = () => {
+      player10.currentTime = seekbar10.value;
+  
+      const restartImage = document.querySelector("#restart-image10");
+      const playPauseButton10 = document.querySelector("#play10");
+      restartImage.onclick = () => {
+        player10.currentTime = 0;
+        seekbar10.value = 0;
+        player10.play();
+        playPauseButton10.src = "images/pause10.png";
+      };
+    };
     const currentMinutes = Math.floor(player10.currentTime / 60);
     const currentSeconds = Math.floor(player10.currentTime % 60);
     currentTime10.textContent =
@@ -683,25 +702,6 @@ window.onload = function () {
   progressBar10.onclick = (e) => {
     const newTime = (e.offsetX / progressBar10.offsetWidth) * player10.duration;
     player10.currentTime = newTime;
-  };
-  const seekbar10 = document.querySelector("#seekbar10");
-  seekbar10.max = player10.duration;
-  seekbar10.value = player10.currentTime;
-  player.ontimeupdate = () => {
-    seekbar10.value = player10.currentTime;
-    updateTime();
-  };
-  seekbar10.oninput = () => {
-    player10.currentTime = seekbar10.value;
-
-    const restartImage = document.querySelector("#restart-image10");
-    const playPauseButton10 = document.querySelector("#play10");
-    restartImage.onclick = () => {
-      player10.currentTime = 0;
-      seekbar10.value = 0;
-      player10.play();
-      playPauseButton10.src = "images/pause10.png";
-    };
   };
 };
 
